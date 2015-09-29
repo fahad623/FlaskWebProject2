@@ -9,16 +9,21 @@ from bokeh.plotting import figure
 from bokeh.models import HoverTool, BoxSelectTool
 from bokeh.models.widgets import DataTable
 from bokeh.models import ColumnDataSource
-from bokeh.models.
-from bokeh.models.widgets import HBox, Paragraph, Slider, VBox
+from bokeh.models import CustomJS
+from bokeh.models.widgets import HBox, Paragraph, Slider, VBox, Dropdown
+from bokeh.io import vform
 import math
-
 
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
 
+class EventHandler():
+    def input_change(self):
+        a = 8
+
+eventHandler = EventHandler()
 
 def make_layout():
     # set up some data
@@ -61,21 +66,17 @@ def make_layout():
 
     p.add_tools(BoxSelectTool(), HoverTool())
 
-    callback = CustomJS(args=dict(source=source), code="""
-        var data = source.get('data');
-        var f = cb_obj.get('value')
-        
-        source.trigger('change');
-    """)
+    callback = CustomJS(args=dict(source=source), code="")
 
+    slider_freq = Slider(orientation="horizontal", start=1, end=5, value=1, step=1, name="freq1", title = "Frequency")
+    slider_freq.on_change('value', eventHandler, 'input_change')
 
     plot1 = VBox(
         children=[
             p,
-            Slider(orientation="horizontal", start=1, end=5, value=1, step=1, name="freq", callback = callback)
+            slider_freq
         ]
     )
-
 
     layout = HBox(
         children = [plot1]
@@ -99,4 +100,4 @@ if __name__ == '__main__':
         PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    app.run(HOST, PORT, debug = True)
+    app.run(HOST, PORT)
