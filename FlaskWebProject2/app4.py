@@ -1,4 +1,4 @@
-﻿"""
+"""
 This script runs the application using a development server.
 It contains the definition of routes and views for the application.
 """
@@ -13,6 +13,8 @@ from bokeh.models import CustomJS
 from bokeh.models.widgets import HBox, Paragraph, Slider, VBox, Dropdown
 from bokeh.io import vform
 import math
+import threading
+import time
 
 app = Flask(__name__)
 
@@ -25,6 +27,8 @@ class EventHandler():
 
 eventHandler = EventHandler()
 
+source = None
+
 def make_layout():
     # set up some data
     x = [1, 2, 3, 4, 5]
@@ -34,7 +38,7 @@ def make_layout():
         x = x,
         y = y,
     )
-
+    global source
     # create a column data source for the plots to share
     source = ColumnDataSource(data=data)
 
@@ -88,11 +92,23 @@ def make_layout():
 
     return layout
 
+
+def worker():
+    """thread worker function"""
+    global source
+    while True:
+        time.sleep(2)
+        source.data['y'][0] +=1
+
 @app.route('/')
 def index():  
 
     layout = make_layout()
+    layout.setup_events
     script, div = components(layout)
+
+    t = threading.Thread(target=worker)        
+    t.start()
 
     return render_template('index.html', script = script, div = div)
 

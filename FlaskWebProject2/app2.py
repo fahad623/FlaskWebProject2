@@ -1,4 +1,4 @@
-
+﻿
 
 from bokeh.plotting import figure
 from bokeh.models import Plot, ColumnDataSource
@@ -16,10 +16,14 @@ app = Flask(__name__)
 class EventHandler:
     def input_change(self):
         a = 8
+        print "test"
 
 eventHandler = EventHandler()
 
 
+
+def input_change1():
+    test = True;
 
 @app.route('/')
 def index():  
