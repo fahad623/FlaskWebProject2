@@ -11,3 +11,16 @@ D:\Samples\Practice\Flask\FlaskWebProject2\FlaskWebProject2\bin\Microsoft.Python
 D:\Samples\Practice\Flask\FlaskWebProject2\FlaskWebProject2\bin\wfastcgi.py
 D:\Samples\Practice\Flask\FlaskWebProject2\FlaskWebProject2\obj\Debug\web.config
 D:\Samples\Practice\Flask\FlaskWebProject2\FlaskWebProject2\obj\Debug\web.debug.config
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\bin\Microsoft.PythonTools.WebRole.dll
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\attach_server.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\visualstudio_py_debugger.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\visualstudio_py_repl.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\visualstudio_py_util.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\__init__.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\__main__.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\bin\AzureSetup.cfg
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\bin\wfastcgi.py
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\web.config
+C:\Fahad\Code\practice\FlaskWebProject2\FlaskWebProject2\obj\Debug\web.debug.config
